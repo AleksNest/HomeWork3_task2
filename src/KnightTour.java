@@ -15,22 +15,21 @@ class KnightTour {
         }
     }
 
-    static boolean solveKT()  {                                                     // Метод обратного отслеживания. false - если полный обход невозможен и true - ели возможен
+    static boolean solveKT() {                                                     // Метод обратного отслеживания. false - если полный обход невозможен и true - ели возможен
         int sol[][] = new int[8][8];
 
         for (int x = 0; x < N; x++)                                                 // инициализациия матрицы решения
             for (int y = 0; y < N; y++)
                 sol[x][y] = -1;
 
-		int moves [][] = {{2,1},{1,2},{-1,2},{-2,1},{-2,-1},{-1,-2},{1,-2},{2,-1}}; // move[x][y] определяют следующий ход коня по кординатам x и y.
+        int moves[][] = {{2, 1}, {1, 2}, {-1, 2}, {-2, 1}, {-2, -1}, {-1, -2}, {1, -2}, {2, -1}}; // move[x][y] определяют следующий ход коня по кординатам x и y.
 
         sol[0][0] = 0;                                                              //конь изначально находится на первом блоке
 
-		if (!solveKTUtil(0, 0, 1, sol, moves)) {                        // Начиная с  0,0 и изучиние  всех ходов, используя solveKTUtil
+        if (!solveKTUtil(0, 0, 1, sol, moves)) {                        // Начиная с  0,0 и изучиние  всех ходов, используя solveKTUtil
             System.out.println("Решения не существует");
             return false;
-        }
-        else
+        } else
             printSolution(sol);
 
         return true;
@@ -60,8 +59,7 @@ class KnightTour {
         return false;
     }
 
-    public static void main(String args[])
-    {
+    public static void main(String args[]) {
         solveKT();
     }
 }
