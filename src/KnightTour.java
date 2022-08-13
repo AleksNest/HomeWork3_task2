@@ -51,8 +51,7 @@ class KnightTour {
                         sol, moves))
                     return true;
                 else
-                    sol[next_x][next_y]
-                            = -1;                                                       // backtracking
+                    sol[next_x][next_y] = -1;                                           // backtracking
             }
         }
 
